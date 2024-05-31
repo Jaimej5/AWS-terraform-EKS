@@ -1,1 +1,1 @@
-# AWS-terraform-EKS
+# Desplegamos una VPC en AWS usando TERRAFORM con el mínimo esfuerzo
