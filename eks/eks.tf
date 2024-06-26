@@ -6,7 +6,7 @@ data "aws_eks_cluster" "cluster" {
 #Auth
 data "aws_eks_cluster_auth" "cluster" {
     name = module.eks.cluster_id
-}
+
 
 #Provider de k8s para conectarse a él
 provider "kubernetes" {
