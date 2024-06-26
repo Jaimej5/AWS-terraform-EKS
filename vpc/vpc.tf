@@ -12,16 +12,17 @@ module "vpc" {
   intra_subnets  = ["10.0.51.0/24", "10.0.52.0/24", "10.0.53.0/24"]
 
   enable_nat_gateway = true #salida a internet de las redes privadas
+  enable_vpn_gateway = false #vpn
 
   # PARA EL CLUSTER  
   private_subnet_tags = {
     "kubernetes.io/role/internal-elb" = "1",
-    "kubernetes.io/cluster/${var.project_name}-${var.environment}" = "shared"
+    "kubernetes.io/cluster/${var.project_name}-${var.environment}-vcc-eks-tf" = "shared"
   }
 
   public_subnet_tags = {
     "kubernetes.io/role/elb" = "1",
-    "kubernetes.io/cluster/${var.project_name}-${var.environment}" = "shared"
+    "kubernetes.io/cluster/${var.project_name}-${var.environment}-vcc-eks-tf" = "shared"
   }
 
   tags = {
